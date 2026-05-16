@@ -9,9 +9,8 @@ interface IParams {
   conversationId: string;
 }
 
-const ChatId = async ({ params }: { params: IParams }) => {
-  // Fix Next 15 Dynamic Route Params Warning: params should be awaited. Wait, Next.js 15 does not strictly require `await params` in server components if used as plain object? Actually, in Next.js 15, `params` is a Promise and needs to be awaited.
-  const resolvedParams = await Promise.resolve(params);
+const ChatId = async ({ params }: { params: Promise<IParams> }) => {
+  const resolvedParams = await params;
   
   const conversation = await getConversationById(resolvedParams.conversationId);
   const messages = await getMessages(resolvedParams.conversationId);

@@ -9,7 +9,6 @@ import axios from "axios";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Github } from "lucide-react"; // Wait, lucide-react Github icon is deprecated, let's use a generic one or SVG
 // I will just use SVG for Google and Github
 // Wait, I can use react-icons if I installed it, but I didn't. I'll use simple text for now or SVGs.
 

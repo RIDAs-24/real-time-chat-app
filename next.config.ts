@@ -1,4 +1,5 @@
 import type { NextConfig } from "next";
+// @ts-ignore
 import withPWAInit from "next-pwa";
 
 const withPWA = withPWAInit({
@@ -9,6 +10,7 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
+  turbopack: {},
   experimental: {
     serverActions: {
       bodySizeLimit: '2mb',
