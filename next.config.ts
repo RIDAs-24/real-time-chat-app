@@ -9,7 +9,7 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
-  // ❌ remove turbopack completely
+  turbopack: {},
   experimental: {
     serverActions: {
       bodySizeLimit: "2mb",
