@@ -1,5 +1,7 @@
 import prisma from "@/lib/prismadb";
 
+export const dynamic = "force-dynamic";
+
 export default async function AdminPage() {
   const usersCount = await prisma.user.count();
   const conversationsCount = await prisma.conversation.count();
