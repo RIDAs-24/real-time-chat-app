@@ -1,5 +1,4 @@
 import type { NextConfig } from "next";
-// @ts-ignore
 import withPWAInit from "next-pwa";
 
 const withPWA = withPWAInit({
@@ -10,30 +9,19 @@ const withPWA = withPWAInit({
 });
 
 const nextConfig: NextConfig = {
-  turbopack: {},
+  // ❌ remove turbopack completely
   experimental: {
     serverActions: {
-      bodySizeLimit: '2mb',
+      bodySizeLimit: "2mb",
     },
   },
+
   images: {
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'res.cloudinary.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'avatars.githubusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'lh3.googleusercontent.com',
-      },
-      {
-        protocol: 'https',
-        hostname: 'api.dicebear.com',
-      }
+      { protocol: "https", hostname: "res.cloudinary.com" },
+      { protocol: "https", hostname: "avatars.githubusercontent.com" },
+      { protocol: "https", hostname: "lh3.googleusercontent.com" },
+      { protocol: "https", hostname: "api.dicebear.com" }
     ]
   }
 };
